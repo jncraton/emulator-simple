@@ -29,6 +29,6 @@ Operations
 
 This simple processor supports only 3 operations:
 
-0. Halt - Stop the processor
-1. LoadImmedate - Store the value in `immediate` to register `dst`.
-2. Add - Add the value from register `src` to the value in register `dst` and store the result in `dst`.
+1. Halt - Stop the processor
+2. LoadImmedate - Store the value in `immediate` to register `dst`.
+3. Add - Add the value from register `src` to the value in register `dst` and store the result in `dst`.
