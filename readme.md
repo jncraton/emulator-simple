@@ -1,7 +1,7 @@
 Simple Processor
 ================
 
-This project requires the implemenation of a very simple processor to execute instructions. The instruction format used is intended to be very simple (while not being space efficient).
+This project requires the implementation of a very simple processor to execute instructions. The instruction format used is intended to be very simple (while not being space efficient).
 
 Instruction Format
 ------------------
