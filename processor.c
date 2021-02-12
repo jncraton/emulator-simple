@@ -33,6 +33,35 @@ void print_instruction(Instruction inst) {
 
 void execute(Instruction * instructions, int * registers) {
   // Execute the supplied instructions and update registers appropriately
+
+  /*
+  // Get an instruction
+  Instuction inst = instructions[0];
+
+  // Get register value
+  int value = registers[R0];
+
+  // Get instruction pointed to by register value
+  Instruction inst = instructions[registers[R2]];
+
+  // Get instruction properties
+  inst.op;
+  inst.src;
+  inst.dst;
+  inst.immediate;
+
+  // Access src register value
+  registers[inst.src];
+  */
+  
+  /* Rough psuedocode
+  while(1) {
+    load instruction
+    if op is halt then return
+    if op is load then store imm in dst
+    if op is add then store src+dst in dst
+  }
+  */
 }
 
 /* 
