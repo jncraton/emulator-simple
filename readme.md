@@ -1,5 +1,5 @@
-Instruction Processor
-=====================
+Simple Processor
+================
 
 This project requires the implemenation of a very simple processor to execute instructions. The instruction format used is intended to be very simple (while not being space efficient).
 
@@ -32,3 +32,5 @@ This simple processor supports only 3 operations:
 1. Halt - Stop the processor
 2. LoadImmedate - Store the value in `immediate` to register `dst`.
 3. Add - Add the value from register `src` to the value in register `dst` and store the result in `dst`.
+
+It has no ability to alter the flow of program execution and no access to external memory or I/O.
