@@ -38,7 +38,7 @@ It has no ability to alter the flow of program execution and no access to extern
 Running
 -------
 
-Once the `execute` function have been implemented, the processor can be compiled and tested by invoking:
+Once the `execute` function has been implemented, the processor can be compiled and tested by invoking:
 
 ```
 make
