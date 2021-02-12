@@ -34,3 +34,12 @@ This simple processor supports only 3 operations:
 3. Add - Add the value from register `src` to the value in register `dst` and store the result in `dst`.
 
 It has no ability to alter the flow of program execution and no access to external memory or I/O.
+
+Running
+-------
+
+Once the `execute` function have been implemented, the processor can be compiled and tested by invoking:
+
+```
+make
+```
