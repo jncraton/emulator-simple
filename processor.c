@@ -32,9 +32,18 @@ void print_instruction(Instruction inst) {
 }
 
 void execute(Instruction * instructions, int * registers) {
-  // Execute the supplied instructions and update registers appropriately
+  /* Execute the supplied instructions and update registers appropriately
 
-  /*
+  This should support the following instructions:
+
+  1. Halt
+  2. LoadImmediate
+  3. Add
+
+  See readme.md for more information.
+
+  Hints
+  
   // Get an instruction
   Instuction inst = instructions[0];
 
