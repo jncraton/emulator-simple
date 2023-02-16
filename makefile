@@ -1,13 +1,13 @@
 all: test
 
-processor: processor.c
-	gcc -Wall -Wextra $< -o $@
+emulator: src/emulator.c src/emulator.h
+	gcc -Wall -Wextra -Werror $< -o $@
 
-run: processor
-	./processor
+run: emulator
+	./emulator
 
-test: processor
-	./processor
+test: emulator 
+	./emulator
 
 clean:
-	rm -f ./processor
+	rm -f emulator
