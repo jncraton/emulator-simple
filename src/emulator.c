@@ -61,8 +61,6 @@ int tick(int32_t * memory, int32_t * registers) {
   fetch_instruction(memory, registers);
   Instruction inst = decode_instruction(registers[IR]);
 
-  print_registers(registers);
-
   // TODO: Handle Halt, LoadImmediate, AddImmediate, and Add operations
 
   return 0;
