@@ -8,7 +8,7 @@ Learning Objectives
 
 After completing this project, students will be able to:
 
-- Simulate the fetch-execute cycle
+- Simulate the [instruction cycle](https://en.wikipedia.org/wiki/Instruction_cycle)
 - Describe simple operations such as `loadi` and `add`.
 
 CPU Overview
