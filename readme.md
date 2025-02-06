@@ -9,7 +9,7 @@ Learning Objectives
 After completing this project, students will be able to:
 
 - Simulate the [instruction cycle](https://en.wikipedia.org/wiki/Instruction_cycle)
-- Describe simple operations such as `loadi` and `add`.
+- Describe simple operations such as `add` and `li`
 
 CPU Overview
 ------------
