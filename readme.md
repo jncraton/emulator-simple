@@ -3,6 +3,14 @@ Emulator
 
 This project implementats of a very simple processor to execute instructions.
 
+Learning Objectives
+-------------------
+
+After completing this project, students will be able to:
+
+- Simulate the fetch-execute cycle
+- Describe simple operations such as `loadi` and `add`.
+
 CPU Overview
 ------------
 
