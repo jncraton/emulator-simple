@@ -22,7 +22,8 @@ void print_instruction(Instruction inst) {
 }
 
 void fetch_instruction(int32_t * memory, int *registers) {
-  // TODO: Load instruction pointed to by IP into the IR register
+  // Load instruction pointed to by IP into the IR register
+  registers[IR] = memory[registers[IP]];
 }
 
 Instruction decode_instruction(int32_t reg) {
@@ -61,7 +62,25 @@ int tick(int32_t * memory, int32_t * registers) {
   fetch_instruction(memory, registers);
   Instruction inst = decode_instruction(registers[IR]);
 
-  // TODO: Handle Halt, LoadImmediate, AddImmediate, and Add operations
+  switch (inst.op) {
+    case Halt:
+      return 0; // Halt the processor
+
+    case LoadImmediate:
+      registers[inst.dst] = inst.immediate;
+      break;
+
+    case Add:
+      registers[inst.dst] += registers[inst.src];
+      break;
+
+    case AddImmediate:
+      registers[inst.dst] = registers[inst.src] + inst.immediate;
+      break;
+
+    default:
+      printf("Unknown operation: %d\n", inst.op);
+      exit(1);
 
   return 0;
 }
