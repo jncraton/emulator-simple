@@ -21,7 +21,7 @@ void print_instruction(Instruction inst) {
   printf("%s src=%d dst=%d imm=%d\n", instruction_names[inst.op], inst.src, inst.dst, inst.immediate);
 }
 
-void fetch_instruction(int32_t * memory, int *registers) {
+void fetch_instruction(int32_t * memory, int32_t *registers) {
   // TODO: Load instruction pointed to by IP into the IR register
   // Note: This function should not modify IP
 }
@@ -99,7 +99,7 @@ void update_display(int32_t * memory) {
   }
 }
 
-void emulate_system(int32_t * memory, int *registers, int clock_rate) {
+void emulate_system(int32_t * memory, int32_t *registers, int clock_rate) {
   int clock_interval_us = 1000000 / clock_rate;
 
   // Loop until the next instruction is halt (0x00000000)
