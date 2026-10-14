@@ -26,8 +26,11 @@ void fetch_instruction(int32_t * memory, int *registers) {
 }
 
 Instruction decode_instruction(int32_t reg) {
-  // Return the decoded form of the IR register
-  return *(Instruction *) & reg;
+  // TODO: Convert the value stored in reg to an Instruction op, dst, src, and imm
+  // Use bit shifts and masks
+  Instruction inst = {Halt, 0, 0, 0};
+
+  return inst;
 }
 
 int tick(int32_t * memory, int32_t * registers) {
