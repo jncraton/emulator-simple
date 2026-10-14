@@ -172,7 +172,7 @@ int main() {
   };
   memset(registers, 0, sizeof(registers));
   emulate_system((void *) load_imm_instructions, registers, TEST_CLOCK);
-  test_int_equal(registers[IP], 3);
+  test_int_equal(registers[IP], 5);
   test_int_equal(registers[R0], 1);
   test_int_equal(registers[R1], 80);
   test_int_equal(registers[R2], 13);
@@ -190,7 +190,7 @@ int main() {
   };
   memset(registers, 0, sizeof(registers));
   emulate_system((void *) add_instructions, registers, TEST_CLOCK);
-  test_int_equal(registers[IP], 3);
+  test_int_equal(registers[IP], 6);
   test_int_equal(registers[R0], 42);
   test_int_equal(registers[R1], 142);
   test_int_equal(registers[R2], -3);
@@ -207,7 +207,7 @@ int main() {
   };
   memset(registers, 0, sizeof(registers));
   emulate_system((void *) addi_instructions, registers, TEST_CLOCK);
-  test_int_equal(registers[IP], 5);
+  test_int_equal(registers[IP], 6);
   test_int_equal(registers[R0], 3);
   test_int_equal(registers[R1], 51);
   test_int_equal(registers[R2], 52);
