@@ -37,6 +37,7 @@ char *instruction_names[14] = {
 };
 
 // Define instruction format
+// Note that on a the little-endian systems we're targetting, op with be the least significant byte
 typedef struct {
   Operation op;
   Register dst;

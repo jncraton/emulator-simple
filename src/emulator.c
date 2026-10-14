@@ -23,11 +23,11 @@ void print_instruction(Instruction inst) {
 
 void fetch_instruction(int32_t * memory, int32_t *registers) {
   // TODO: Load instruction pointed to by IP into the IR register
-  // Note: This function should not modify IP
+  // Note: Do not modify IP
 }
 
 Instruction decode_instruction(int32_t reg) {
-  // TODO: Convert reg to an Instruction op, dst, src, and imm using shifts and masks
+  // TODO: Decode reg to op, dst, src, and imm using shifts and masks
   Instruction inst = {Halt, 0, 0, 0};
 
   return inst;
