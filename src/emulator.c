@@ -166,7 +166,9 @@ int main() {
   Instruction load_imm_instructions[256] = {
     {LoadImmediate, R0, 0, 1},
     {LoadImmediate, R1, 0, 80},
-    {LoadImmediate, R2, 0, 13}
+    {LoadImmediate, R2, 0, 13},
+    {LoadImmediate, R3, 0, -1},
+    {LoadImmediate, R4, 0, -127}
   };
   memset(registers, 0, sizeof(registers));
   emulate_system((void *) load_imm_instructions, registers, TEST_CLOCK);
@@ -174,19 +176,25 @@ int main() {
   test_int_equal(registers[R0], 1);
   test_int_equal(registers[R1], 80);
   test_int_equal(registers[R2], 13);
+  test_int_equal(registers[R3], -1);
+  test_int_equal(registers[R4], -127);
 
   printf("Add Tests\n");
   Instruction add_instructions[256] = {
     {LoadImmediate, R0, 0, 42},
     {LoadImmediate, R1, 0, 100},
-    {Add, R1, R0, 0}
+    {Add, R1, R0, 0},
+    {LoadImmediate, R2, 0, -3},
+    {LoadImmediate, R3, 0, 2},
+    {Add, R3, R2, 0}
   };
   memset(registers, 0, sizeof(registers));
   emulate_system((void *) add_instructions, registers, TEST_CLOCK);
   test_int_equal(registers[IP], 3);
   test_int_equal(registers[R0], 42);
   test_int_equal(registers[R1], 142);
-  test_int_equal(registers[R2], 0);
+  test_int_equal(registers[R2], -3);
+  test_int_equal(registers[R3], -1);
 
   printf("Add Immediate Tests\n");
   Instruction addi_instructions[256] = {
@@ -194,7 +202,8 @@ int main() {
     {AddImmediate, R0, R0, 2},
     {AddImmediate, R1, R1, 21},
     {AddImmediate, R1, R1, 30},
-    {AddImmediate, R2, R1, 1}
+    {AddImmediate, R2, R1, 1},
+    {AddImmediate, R3, R2, -10}
   };
   memset(registers, 0, sizeof(registers));
   emulate_system((void *) addi_instructions, registers, TEST_CLOCK);
@@ -202,6 +211,8 @@ int main() {
   test_int_equal(registers[R0], 3);
   test_int_equal(registers[R1], 51);
   test_int_equal(registers[R2], 52);
+  test_int_equal(registers[R3], 42);
+  test_int_equal(registers[R4], 0);
 
   printf("All tests passed\n");
 }
