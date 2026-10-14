@@ -151,6 +151,32 @@ int main() {
   test_int_equal(registers[IP], 2);
   test_int_equal(registers[IR], 42);
 
+  printf("Instruction Decode Tests\n");
+
+  Instruction decoded = decode_instruction(
+    (int32_t)0xFB030203
+  );
+  test_int_equal(decoded.op, AddImmediate);
+  test_int_equal(decoded.dst, R2);
+  test_int_equal(decoded.src, R3);
+  test_int_equal(decoded.immediate, -5);
+
+  decoded = decode_instruction(
+    (int32_t)0x7F040101
+  );
+  test_int_equal(decoded.op, LoadImmediate);
+  test_int_equal(decoded.dst, R1);
+  test_int_equal(decoded.src, R4);
+  test_int_equal(decoded.immediate, 127);
+
+  decoded = decode_instruction(
+    (int32_t)0x80000000
+  );
+  test_int_equal(decoded.op, Halt);
+  test_int_equal(decoded.dst, 0);
+  test_int_equal(decoded.src, 0);
+  test_int_equal(decoded.immediate, -128);
+
   printf("Halt Tests\n");
   Instruction halt_instructions[256] = {
     {Halt, 0, 0, 0}
