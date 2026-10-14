@@ -157,9 +157,9 @@ int main() {
 
   printf("Instruction Decode Tests\n");
 
-  Instruction decoded = decode_instruction(0x01020304);
-  test_int_equal(decoded.op, AddImmediate); // 4
-  test_int_equal(decoded.dst, R3);
+  Instruction decoded = decode_instruction(0x01020403);
+  test_int_equal(decoded.op, AddImmediate); // 3
+  test_int_equal(decoded.dst, R4);
   test_int_equal(decoded.src, R2);
   test_int_equal(decoded.immediate, 1);
 
